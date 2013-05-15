@@ -896,7 +896,7 @@ static int64_t avalon_scanhash(struct thr_info *thr)
 			return 0;
 		}
 		if (unlikely(ret == AVA_GETS_RESTART))
-			break;
+			continue;
 		if (unlikely(ret == AVA_GETS_TIMEOUT)) {
 			timersub(&tv_finish, &tv_start, &elapsed);
 			applog(LOG_DEBUG, "Avalon: no nonce in (%ld.%06lds)",
